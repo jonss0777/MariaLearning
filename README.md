@@ -42,7 +42,7 @@ I included a pseudo comple adding your own card set during run time. This featur
 
 Here's a walkthrough of implemented required features:
 
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/jonss0777/MariaLearning/blob/a343ab5754b4c5ab3a4a84a8e789249f742406b6/WebsiteGif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  

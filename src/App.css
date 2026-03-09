@@ -1,0 +1,343 @@
+.content{
+  display: flex;
+  margin: 30px 0px 100px 0px;
+  padding: 0px;
+ 
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+
+ 
+}
+
+
+
+.content > h1{
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+#main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.title-image-container {
+  width: 100%; /* Set the desired width for your div */
+  height: auto; /* Set the desired height for your div */
+  /*border: 1px solid black; Optional: adds a border to see the container */
+  overflow: hidden; /* Optional: hides any overflowing parts if using 'cover' */
+  text-align: center;
+}
+
+.title-image-container img {
+  width: 100%; /* Makes the image take the full width of the container */
+  height: 100%; /* Makes the image take the full height of the container */
+  object-fit: cover; /* or 'contain' */
+}
+
+#input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 0px 0px;
+  margin: 4px 0px 10px 0px;
+  min-width: 300px;
+}
+
+#flash-cards-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* border-color: black; */
+  color: black;
+  /* background-color: aquamarine; */
+  border-width: 1px;
+  /* border-style: solid; */
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+#flash-cards-container > h2{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+
+#form-input {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 0.25fr; */
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+ 
+  margin: 0px;
+}
+
+.form-input-item {
+
+  padding: 3px;
+  margin: 5px;
+}
+
+#word {
+  margin: 3px;
+  padding: 5px;
+  min-height: 40px;
+  
+}
+
+#definition {
+  margin: 3px;
+  padding: 5px;
+  min-height: 40px;
+  
+}
+
+#form-input-item-submit {
+  display: flex;
+  /* align-content: center; */
+  align-self: flex-end;
+  padding: 4px;
+  margin: 4px;
+  min-width: 50px;
+
+}
+
+
+#flash-card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px; 
+  justify-content: center;
+}
+
+
+.flash-card {
+  /* display: flex;
+  flex-direction: row; */
+  display: flex;
+  
+  margin: 0px;
+  padding: 0px;
+}
+
+.flash-card > div{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 20px 0px;
+
+}
+
+.flash-card > div > p{
+  margin: 0px;
+  padding: 0px;
+}
+
+.button-save{
+   border-radius: 40px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: rgb(1, 7, 25);
+  color: white; 
+}
+
+.button-save:hover{
+  opacity: 75%;
+}
+
+.button-edit{
+   border-radius: 40px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: rgb(17, 73, 215);
+  color: white;
+  margin: 10px 0px 10px 0px;
+}
+
+
+.button-edit:hover {
+  /* border-color: #646cff; */
+  opacity: 75%;
+}
+
+.button-add{
+  border-radius: 40px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: green;
+  color: white;
+  margin: 10px 0px 10px 0px;
+}
+
+
+.button-add:hover {
+  /* border-color: #646cff; */
+  opacity: 75%;
+}
+ 
+
+.button-remove{
+  background-color: red;
+  color:white;
+  
+  margin: 10px 0px 10px 0px;
+}
+
+
+.button-remove:hover {
+  /* border-color: #646cff; */
+  opacity: 75%;
+}
+
+p{
+  font-family: "Poppins,sans-serif";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4
+}
+
+
+
+
+/* @keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
+/* @media (prefers-color-scheme: dark){
+  #flash-cards-contatiner{
+    color: white;
+  }
+} */
+
+/* #form-input-button {
+  /* padding: 0px;
+  margin: 0px;
+  min-width: 50px;
+   align-self: flex-end; 
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+   background-color: #1a1a1a; 
+  cursor: pointer;
+  transition: border-color 0.25s;
+} */
+
+/* #flash-cards-container > h3{
+  padding-left: 7px;
+  margin-left: 3px;
+} */
+
+/* #root {
+   max-width: 1280px; 
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+/* .logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+
+ 
+.card {
+  padding: 10px 30px 30px 30px;
+  margin: 10px 30px 20px 30px;
+  /* padding: 10px 30px 10px 30px;
+  margin: 15px 10px 10px 10px; */
+  border-radius: 0;
+  /* background-color: rgb(255, 120, 2); */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: 0px;
+  /* padding: 2em; */
+} 
+
+
+
+.read-the-docs {
+  color: #e5e1e1;
+} 
+
+
+.button-link{
+  color: white;
+  padding: 10px 14px 10px 14px;
+  margin: 0px 0px 0px 0px;
+  border-radius: 30px;
+  background-color: rgb(5, 102, 193);
+}
+
+.button-link:hover{
+  /* background-color: rgb(7, 93, 174) */
+  opacity: 75%;
+  /* color: grey; */
+}
+
+#button-create-new-flashcard{
+    border-radius: 40px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: rgb(1, 7, 25);
+  color: white;
+}
+
+#button-create-new-flashcard:hover{
+  /* background-color: rgb(38, 38, 42);
+  color: rgb(203, 200, 200); */
+  opacity: 75%;
+}

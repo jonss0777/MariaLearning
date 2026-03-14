@@ -3,44 +3,43 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'; import './App.css'
 import Home from './Home';
 import About from './About';
-import Flashcards from './Flashcards';
-import Flashcard from './Flashcard';
-import CreateFlashcard from './CreateFlashcard';
+import Collection from './Collection/Collection';
+import Flashcard from './Collection/Flashcard';
+import CreateFlashcard from './Collection/CreateFlashcard';
+import Shop from './Shop/ShopList';
+import Login from './auth/Login';
+import Register from './auth/Register';
+import ProtectedRoute from './ProtectedRotute';
+import { AuthProvider } from './Providers/AuthProvider';
+import ShoppingCart from './Shop/ShoppingCartList';
+import { CartProvider } from './Providers/CartProvider';
 function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
-          <Link style={{ margin: "5px", padding: "8px" }} to="/">Home</Link> |{" "}
-          {/* <Link to="/contact">Contact</Link> */}
-          <Link style={{ margin: "5px", padding: "8px" }} to="/flashcards">Flashcards</Link>
-          {/* <Link  style={{margin: "5px", padding:"8px"}} to="/flashcard/:id/:title"></Link> */}
-          <Link style={{ margin: "5px", padding: "8px" }} to="/about">About</Link> |{" "}
+        <AuthProvider>
+          <CartProvider>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-        </nav>
+            {/* Protected Routes */}
+            <Route element={<ProtectedRoute />}>
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
-          <Route path="/flashcards" element={<Flashcards />}></Route>
-          <Route path="/create-flashcard" element={<CreateFlashcard />}></Route>
-          <Route path="/flashcard/:id/:title" element={<Flashcard></Flashcard>}></Route>
-        </Routes>
+              <Route path="/about" element={<About />} />
+              <Route path="/collection" element={<Collection />}></Route>
+              <Route path="/create-flashcard" element={<CreateFlashcard />}></Route>
+              <Route path="/collection/:id/:title" element={<Flashcard></Flashcard>}></Route>
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/cart" element={<ShoppingCart/>}/>
+            </Route>
+          </Routes>
+          </CartProvider>
+        </AuthProvider>
       </BrowserRouter>
-      <footer style={{display:"flex", alignItems:"center", flexDirection:"column", position:"relative", bottom: 0, width: "100%", padding: "10px", margin: "0px"}}>
-        <p>Contach Information</p>
-        <p>johndoe@marialearning.com</p>
-        <p>Socials</p>
-        <div style={{display:"flex", flexDirection:"row", rowGap: "30px"}}>
-          <p style={{padding: "0px", margin:"0px 0px 0px 0px"}}>icon</p>
-          <p style={{padding: "0px", margin:"0px 10px 0px 10px"}}>icon</p>
-          <p style={{padding: "0px", margin:"0px 10px 0px 10px"}}>icon</p>
-        </div>
-
-
-      </footer>
+     
     </>
   )
 

@@ -24,7 +24,8 @@
 
 nav {
   background-color: black;
-  padding: 12px 0px 7px 0px;
+  top: 0;
+  padding: 12px 0px 12px 0px;
   margin: 0px 0px 0px 0px;
   text-align: center;
   position: fixed;
@@ -53,6 +54,8 @@ body {
   margin: 0;
   display: flex;
   /* place-items: center; */
+  flex-direction: column;
+
    background-color: #f3f3f3;
   min-width: 320px;
   min-height: 100vh;

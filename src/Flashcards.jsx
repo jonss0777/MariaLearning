@@ -14,7 +14,7 @@ export default function Flashcards() {
         title: "Fruits",
         image: appleImage,
         imageAlt: "Image of an fruit",
-        description: "Learn what different ..."
+        description: "Learn about different fruits"
     },
     {
         id: "24",
@@ -48,7 +48,7 @@ export default function Flashcards() {
                                 <div>
                                     <p>{item.description}.</p>
                                     <div style={{display:"flex"}}>
-                                    <Link className="button-link" to={`/flashcard/${item.id}/${item.title}`}>Go to</Link>
+                                    <Link className="button-link" to={`/flashcard/${item.id}/${item.title}/${item.description}`}>Go to</Link>
                                     <div>ShareIcon</div>
                                     </div>
                                 </div>

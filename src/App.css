@@ -12,6 +12,14 @@
  
 }
 
+.incorrect
+{
+  border-color: red;
+}
+
+.correct{
+  border-color: green;
+}
 
 
 .content > h1{
@@ -341,3 +349,4 @@ p{
   color: rgb(203, 200, 200); */
   opacity: 75%;
 }
+

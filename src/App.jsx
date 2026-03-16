@@ -1,4 +1,4 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'; import './App.css'
 import Home from './Home';
@@ -26,7 +26,7 @@ function App() {
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="/flashcards" element={<Flashcards />}></Route>
           <Route path="/create-flashcard" element={<CreateFlashcard />}></Route>
-          <Route path="/flashcard/:id/:title" element={<Flashcard></Flashcard>}></Route>
+          <Route path="/flashcard/:id/:title/:description" element={<Flashcard></Flashcard>}></Route>
         </Routes>
       </BrowserRouter>
       <footer style={{display:"flex", alignItems:"center", flexDirection:"column", position:"relative", bottom: 0, width: "100%", padding: "10px", margin: "0px"}}>

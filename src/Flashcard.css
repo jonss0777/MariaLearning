@@ -79,7 +79,6 @@
 
 
 
-
 .card-container {
   width: 550px;
   height: 300px;
@@ -128,11 +127,14 @@
 }
 
 .card-front {
-  background-color: #f0f0f0;
+  background-color: #bf2f2f;
 }
 
+
+
 .card-back {
-  background-color: #e0e0e0;
+  background-color: #bd3030;
   transform: rotateX(180deg);
   /* Starts rotated so it's visible when flipped */
 }
+

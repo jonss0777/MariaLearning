@@ -47,7 +47,7 @@ const Login = () => {
           <div>
             <label>Password:</label>
             <input
-              type="password"
+              type="text"
               name="password"
               value={credentials.password}
               onChange={handleChange}
@@ -55,7 +55,7 @@ const Login = () => {
             />
           </div>
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", rowGap: "20px" }}>
-            <button type="submit">Login</button>
+            <button className="auth-button" type="submit">Login</button>
             {  true  ?
               <Link style={{ textAlign: "center" }} to="/register">Or register</Link>
               : <p>reset password...</p>

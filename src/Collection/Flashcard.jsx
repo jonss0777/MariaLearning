@@ -42,7 +42,7 @@ import { useParams } from 'react-router-dom';
 import appleImage from "../assets/apples.png";
 
 const Flashcard = () => {
-    const [data, setData] = useState([{ word: "apple", definition: "mazana" }, { word: "pear", definition:"pera"}, { word: "grapes", definition: "huvas" }, { word: "cherries", definition:"guindas"  }, {word:"peach", definition:"durasno"}]);
+    const [data, setData] = useState([{ word: "apple", definition: "mazana" }, { word: "pear", definition: "pera" }, { word: "grapes", definition: "huvas" }, { word: "cherries", definition: "guindas" }, { word: "peach", definition: "durasno" }]);
     const [index, setIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
     const item = useParams();
@@ -65,72 +65,39 @@ const Flashcard = () => {
 
     return (
         <>
-            <div className="content">
+           
                 <h1>{item.title}</h1>
-                {/* <div className="card-container" onClick={handleClick}>
-                    <div className={`card-flipper ${isFlipped ? 'flipped' : ''}`}>
-                        <div className="card-front">
-                            <p>Front Side (Click Me)</p>
-                        </div>
-                        <div className="card-back">
-                            <p>Back Side (Click Me to return)</p>
-                        </div>
-                    </div>
-                </div> */}
-
-
+            
                 <div className="carousel">
                     <div className="carousel__track-container" >
                         <ul className="carousel__track" style={{ display: "flex", flexDirection: "row", listStyle: "none" }}>
-                            {/* {data.map((item) => ( */}
-                                <li className="card-container" onClick={handleClick}>
-                                    <div className={`card-flipper ${isFlipped ? 'flipped' : ''}`}>
-                                        <div className="card-front">
-                                            <p>{data[index].word}</p>
-                                        </div>
-                                        <div className="card-back">
-                                            <p>{data[index].definition}</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            {/* ))} */}
-
-                            {/* <li className="card-container" onClick={handleClick}>
-                                <div className={`card-flipper ${isFlipped ? 'flipped' : ''}`}>
-                                    <div className="card-front">
-                                        <p>Front Side (Click Me)</p>
-                                    </div>
-                                    <div className="card-back">
-                                        <p>Back Side (Click Me to return)</p>
-                                    </div>
-                                </div>
-                            </li>
                             <li className="card-container" onClick={handleClick}>
                                 <div className={`card-flipper ${isFlipped ? 'flipped' : ''}`}>
                                     <div className="card-front">
-                                        <p>Front Side (Click Me)</p>
+                                        <p>{data[index].word}</p>
                                     </div>
                                     <div className="card-back">
-                                        <p>Back Side (Click Me to return)</p>
+                                        <p>{data[index].definition}</p>
                                     </div>
                                 </div>
-                            </li> */}
+                            </li>
                         </ul>
                     </div>
                     <div className="navigate_carousel">
+                        <div className="carousel__nav">
+                            <button className="carousel__indicator" ></button>
+                            <button className="carousel__indicator" ></button>
+                            <button className="carousel__indicator" ></button>
+                        </div>
+                        <div className="carousel_prev_next_buttons">
                         <button className="carousel__button carousel__button--left" onClick={() => goLeft(index)} >←</button>
-                        {/* <div className="carousel__nav">
-                            <button className="carousel__indicator" ></button>
-                            <button className="carousel__indicator" ></button>
-                            <button className="carousel__indicator" ></button>
-                        </div> */}
                         <button className="carousel__button carousel__button--right" onClick={() => goRight(index)}>→</button>
+                        </div>
                     </div>
                 </div>
 
 
 
-            </div>
         </>
     );
 };

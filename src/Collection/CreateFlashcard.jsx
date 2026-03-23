@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import './CreateFlashCard.css';
 
 export default function CreateFlashcard(props) {
-    // const [flashcardData, setFlashcardData] = useState([{ key: "apple", word: "apple", edit: false, definition: "manzana" }, { key: "book", word: "book", definition: "libro", edit: false }]);
+    const [flashcardData, setFlashcardData] = useState([{ key: "apple", word: "apple", edit: false, definition: "manzana" }, { key: "book", word: "book", definition: "libro", edit: false }]);
     const cardInfo = props.cardInfo;
 
     // fetch card date using cardInfo
     const navigate = useNavigate();
- 
+
     const addFlashcard = (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -25,7 +26,7 @@ export default function CreateFlashcard(props) {
 
     }
 
-    const saveFlashcardEdit = (event,index) => {
+    const saveFlashcardEdit = (event, index) => {
         console.log(`Saving updates to card with index${index}`);
         console.log("Saving....");
         console.log("EVENT:");
@@ -35,7 +36,7 @@ export default function CreateFlashcard(props) {
         const dataObject = Object.fromEntries(formData.entries());
 
         setFlashcardData((prevState) => prevState.map((item, i) =>
-            i === index ? { ... dataObject,  edit: false } : item))
+            i === index ? { ...dataObject, edit: false } : item))
 
     }
 
@@ -118,14 +119,14 @@ export default function CreateFlashcard(props) {
                                 :
                                 <>
                                     <div className="flash-card-edit">
-                                        <form onSubmit={(event) => saveFlashcardEdit(event,index)}>
-                                            <div style={{display: "flex", rowGap: "10px"}}>
-                                                <label style={{padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent:"center"}}>Word</label>
-                                                <textarea  style={{padding: "0", margin: "10px 0px"}} name="word" rows="2" cols="30" defaultValue={item.word} required ></textarea>
+                                        <form onSubmit={(event) => saveFlashcardEdit(event, index)}>
+                                            <div style={{ display: "flex", rowGap: "10px" }}>
+                                                <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Word</label>
+                                                <textarea style={{ padding: "0", margin: "10px 0px" }} name="word" rows="2" cols="30" defaultValue={item.word} required ></textarea>
                                             </div>
-                                            <div style={{display: "flex", rowGap: "10px"}}>
-                                                <label style={{padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Title</label>
-                                                <textarea style={{padding: "0", margin: "10px 0px"} } name="definition" rows="2" cols="30" defaultValue={item.definition} required></textarea>
+                                            <div style={{ display: "flex", rowGap: "10px" }}>
+                                                <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Title</label>
+                                                <textarea style={{ padding: "0", margin: "10px 0px" }} name="definition" rows="2" cols="30" defaultValue={item.definition} required></textarea>
                                             </div>
 
                                             <div style={{ display: "flex", justifyContent: "center", columnGap: "10px" }}>
@@ -142,11 +143,11 @@ export default function CreateFlashcard(props) {
                     ))}
                 </ol>
                 <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: "20px", margin: "0px 0px 80px 0px" }}>
-                    <button className="button-save" onClick={handleCreate}>Create</button>
+                    <button className="button-create" onClick={handleCreate}>Create</button>
                 </div>
             </div>
         </div >
-    
+
     )
 
 }

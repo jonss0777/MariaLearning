@@ -51,12 +51,8 @@
 #flash-cards-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* border-color: black; */
   color: black;
-  /* background-color: aquamarine; */
   border-width: 1px;
-  /* border-style: solid; */
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
@@ -68,17 +64,13 @@
 
 
 #form-input {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 0.25fr; */
   display: flex;
   flex-direction: column;
   padding: 0px;
- 
   margin: 0px;
 }
 
 .form-input-item {
-
   padding: 3px;
   margin: 5px;
 }
@@ -139,79 +131,6 @@
   padding: 0px;
 }
 
-.button-save{
-   border-radius: 40px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  /* background-color: #1a1a1a; */
-  cursor: pointer;
-  transition: border-color 0.25s;
-  background-color: rgb(1, 7, 25);
-  color: white; 
-}
-
-.button-save:hover{
-  opacity: 75%;
-}
-
-.button-edit{
-   border-radius: 40px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  /* background-color: #1a1a1a; */
-  cursor: pointer;
-  transition: border-color 0.25s;
-  background-color: rgb(17, 73, 215);
-  color: white;
-  margin: 10px 0px 10px 0px;
-}
-
-
-.button-edit:hover {
-  /* border-color: #646cff; */
-  opacity: 75%;
-}
-
-.button-add{
-  border-radius: 40px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  /* background-color: #1a1a1a; */
-  cursor: pointer;
-  transition: border-color 0.25s;
-  background-color: green;
-  color: white;
-  margin: 10px 0px 10px 0px;
-}
-
-
-.button-add:hover {
-  /* border-color: #646cff; */
-  opacity: 75%;
-}
- 
-
-.button-remove{
-  background-color: red;
-  color:white;
-  
-  margin: 10px 0px 10px 0px;
-}
-
-
-.button-remove:hover {
-  /* border-color: #646cff; */
-  opacity: 75%;
-}
 
 p{
   font-family: "Poppins,sans-serif";
@@ -334,8 +253,3 @@ p{
   color: white;
 }
 
-#button-create-new-flashcard:hover{
-  /* background-color: rgb(38, 38, 42);
-  color: rgb(203, 200, 200); */
-  opacity: 75%;
-}

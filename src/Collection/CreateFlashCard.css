@@ -1,0 +1,64 @@
+
+
+
+.button-add{
+  
+  background-color: #10912a;
+    color: rgb(255, 255, 255);
+    margin: 15px 0px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+}
+
+
+.button-add:hover {
+  opacity: 75%;
+}
+
+
+
+.button-edit{
+
+  background-color: #0d487e;
+    color: rgb(255, 255, 255);
+    margin: 15px 0px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+}
+
+
+.button-edit:hover {
+  opacity: 75%;
+}
+
+
+
+.button-remove{
+   background-color: #b41616;
+    color: rgb(255, 255, 255);
+    margin: 15px 0px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+}
+
+
+.button-remove:hover {
+  opacity: 75%;
+}
+
+.button-create{
+
+  background-color: #000000;
+    color: rgb(255, 255, 255);
+    margin: 15px 0px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+}
+
+.button-create:hover {
+  opacity: 75%;
+}

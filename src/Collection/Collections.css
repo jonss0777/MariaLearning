@@ -1,0 +1,32 @@
+#create-new-flashcard-button {
+    background-color: #0d5189;
+    color: rgb(255, 255, 255);
+    margin: 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+}
+
+#create-new-flashcard-button:hover {
+    opacity: 70%;
+}
+
+#create-new-flashcard-button>a {
+    color: white;
+}
+
+
+.collection-go-to-button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    margin: 15px 0px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+}
+
+
+
+.collection-go-to-button:hover {
+    opacity: 70%;
+    color:white;
+}

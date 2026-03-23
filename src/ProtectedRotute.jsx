@@ -15,13 +15,15 @@ const ProtectedRoute = () => {
 
         {user
             ?
-            (<>
+            (<div className="content">
                 <nav>
                     <Link style={{ margin: "5px", padding: "8px" }} to="/collection">Collection</Link>
                     <Link style={{ margin: "5px", padding: "8px" }} to="/shop">Shop</Link> |{" "}
 
                     <Link style={{ margin: "5px", padding: "8px" }} to="/about">About</Link> |{" "}
-
+                    
+                    <Link style={{backgroundColor:"rgb(183, 80, 80)", position: "fixed", right: 0, top: 0, padding: "10px", color: "white"}} to="/login">Logout</Link>
+                
                 </nav>
                 <Outlet />
                 <footer style={{ display: "flex", alignItems: "center", flexDirection: "column", position: "relative", bottom: 0, width: "100%", padding: "10px", margin: "0px" }}>
@@ -33,10 +35,8 @@ const ProtectedRoute = () => {
                         <p style={{ padding: "0px", margin: "0px 10px 0px 10px" }}>icon</p>
                         <p style={{ padding: "0px", margin: "0px 10px 0px 10px" }}>icon</p>
                     </div>
-
-
                 </footer>
-            </>
+            </div>
             )
             : <Navigate to="/login" state={{ from: location }} replace />}
 

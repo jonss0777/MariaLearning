@@ -50,3 +50,24 @@
   border: 1px solid #ccc; /* Optional: Add a border */
   border-radius: 4px; /* Optional: Rounded corners */
 }
+
+.auth-button{
+
+    border-radius: 40px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #0d5189; 
+  color:white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+}
+
+
+.auth-button:hover {
+  opacity: 70%;
+}
+

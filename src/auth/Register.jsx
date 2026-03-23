@@ -39,7 +39,7 @@ const Register = () => {
                     <div>
                         <label>First name:</label>
                         <input
-                            type="firstName"
+                            type="text"
                             name="firstName"
                             value={credentials.username}
                             onChange={handleChange}
@@ -49,7 +49,7 @@ const Register = () => {
                     <div>
                         <label>Last name:</label>
                         <input
-                            type="lastName"
+                            type="text"
                             name="lastName"
                             value={credentials.password}
                             onChange={handleChange}
@@ -59,7 +59,7 @@ const Register = () => {
                     <div>
                         <label>Email:</label>
                         <input
-                            type="email"
+                            type="text"
                             name="email"
                             value={credentials.password}
                             onChange={handleChange}
@@ -69,7 +69,7 @@ const Register = () => {
                     <div>
                         <label>Password:</label>
                         <input
-                            type="password"
+                            type="text"
                             name="password"
                             value={credentials.password}
                             onChange={handleChange}
@@ -77,7 +77,7 @@ const Register = () => {
                         />
                     </div>
                     <div style={{ display: "flex", flexDirection:"column", justifyContent: "center", rowGap: "20px" }}>
-                        <button type="submit">Register</button>
+                        <button className="auth-button" type="submit">Register</button>
                         <Link style={{textAlign:"center"}}to="/login">Or Login</Link>
                     </div>
                     

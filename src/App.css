@@ -7,9 +7,7 @@
   width: 100%;
   align-items: center;
   align-content: center;
-  min-height: 100vh;
-
- 
+ min-height: 100vh; 
 }
 
 
@@ -332,7 +330,7 @@ p{
   /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
-  background-color: rgb(1, 7, 25);
+  background-color: rgb(255, 255, 255);
   color: white;
 }
 

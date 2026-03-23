@@ -1,0 +1,52 @@
+
+.auth-content{
+ display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+ min-height: 100vh; 
+}
+
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+  
+}
+
+.login-container > h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+.login-container > form{
+    /* background-color: aqua; */
+    padding: 15px 0px 0px 0px;
+    margin: 0px;
+}
+
+.login-container > form > div{
+    /* background-color: brown; */
+    padding: 10px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.login-container > form > div > label{
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.login-container > form > div > input{
+   width: 100%; /* Makes the input take the full width of its parent container */
+  box-sizing: border-box; /* Ensures padding/border is included in the width calculation */
+  padding: 12px 20px; /* Optional: Add some padding */
+  margin: 8px 0; /* Optional: Add some margin */
+  display: inline-block; /* Optional: Standard display behavior */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 4px; /* Optional: Rounded corners */
+}

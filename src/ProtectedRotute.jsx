@@ -15,6 +15,7 @@ const ProtectedRoute = () => {
 
         {user
             ?
+            <>
             (<div className="content">
                 <nav>
                     <Link style={{ margin: "5px", padding: "8px" }} to="/collection">Collection</Link>
@@ -26,7 +27,9 @@ const ProtectedRoute = () => {
                 
                 </nav>
                 <Outlet />
-                <footer style={{ display: "flex", alignItems: "center", flexDirection: "column", position: "relative", bottom: 0, width: "100%", padding: "10px", margin: "0px" }}>
+                
+            </div>
+            <footer style={{ display: "flex", alignItems: "center", flexDirection: "column", position: "relative", bottom: 0, width: "100%", padding: "10px", margin: "0px" }}>
                     <p>Contach Information</p>
                     <p>johndoe@marialearning.com</p>
                     <p>Socials</p>
@@ -36,8 +39,8 @@ const ProtectedRoute = () => {
                         <p style={{ padding: "0px", margin: "0px 10px 0px 10px" }}>icon</p>
                     </div>
                 </footer>
-            </div>
             )
+            </>
             : <Navigate to="/login" state={{ from: location }} replace />}
 
     </>

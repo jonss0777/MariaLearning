@@ -9,32 +9,17 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [shoppingCart, setShoppingCart] = useState(() => {
-        // Optional: Load cart from localStorage on startup
-        const savedCart = localStorage.getItem('cart');
-        return savedCart ? JSON.parse(savedCart) : [{
-            id: "23",
-            title: "Fruits",
-            image: appleImage,
-            imageAlt: "Image of an fruit",
-            description: "Learn what different ...",
-            cost: "$0.50"
-        },
-        {
-            id: "24",
-            title: "Candys",
-            image: candyImage,
-            imageAlt: "Image of an candy",
-            description: "Learn what different ...",
-            cost: "$1.00"
-        },
-        {
-            id: "25",
-            title: "Furniture",
-            image: furnitureImage,
-            imageAlt: "Image of an furniture",
-            description: "Learn what different ...",
-            cost: "$3.50"
-        }];
+        try {
+            const savedCart = localStorage.getItem('cart');
+            // 1. Check if it exists
+            // 2. Parse it
+            // 3. Ensure the parsed result is actually an array
+            const parsedCart = savedCart ? JSON.parse(savedCart) : null;
+            return Array.isArray(parsedCart) ? parsedCart : {};
+        } catch (error) {
+            console.error("Failed to parse cart from localStorage:", error);
+            return {}; // Fallback to empty array on any error
+        }
     });
 
     //const totalItems = () =>  shoppingCart.reduce((sum, item) => sum + item.amount, 0);
@@ -45,26 +30,44 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem('cart', JSON.stringify(shoppingCart));
     }, [shoppingCart]);
 
-    const addItemToCart = (id, setName, cost) => {
+
+    const addItemToCart = (id, item) => {
+        console.log(item)
         setShoppingCart((prev) => {
-            const exists = prev.find(item => item.id === id);
-            if (exists) {
-                return prev.map(item =>
-                    item.id === id ? { ...item, amount: item.amount + 1 } : item
-                );
-            }
-            return [...prev, { id, setName, cost, amount: 1 }];
+            const existingItems = prev[id] || [];
+
+            return {
+                ...prev,
+                [id]: [
+                    ...existingItems,
+                    item
+                ]
+            };
+        });
+       
+    };
+
+   
+    const removeItemFromCart = (id) => {
+        setShoppingCart((prev) => {
+            const existingItems = prev[id] || [];
+
+            if (existingItems.length === 0) return prev;
+
+            const updatedItems = [...existingItems];
+            updatedItems.pop();
+
+            return {
+                ...prev,
+                [id]: updatedItems
+            };
         });
     };
 
-    const removeItem = (id) => {
-        setShoppingCart(prev => prev.filter(item => item.id !== id));
-    };
-
-    const clearCart = () => setShoppingCart([]);
+    const clearCart = () => setShoppingCart({});
 
     return (
-        <CartContext value={{ shoppingCart, addItemToCart, removeItem, clearCart }}>
+        <CartContext value={{ shoppingCart, addItemToCart, removeItemFromCart, clearCart }}>
             {children}
         </CartContext>
     );

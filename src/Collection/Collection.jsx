@@ -39,7 +39,7 @@ export default function Flashcards() {
             {/* <div style={{ padding: "0px", margin: "0px" }}> */}
             <ol style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", listStyle: "none", margin: "10px", padding: "15px", justifyContent: "center" }}>
                 {data.map((item) => (
-                    <li className="card">
+                    <li className="collection-card card">
                         <div style={{ padding: "4px 4px 4px 4px", margin: "4px 4px 4px 4px" }}>
                             <h2 style={{ textAlign: "center" }}>{item.title}</h2>
                             <div>

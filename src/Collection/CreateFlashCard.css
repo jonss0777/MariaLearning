@@ -1,14 +1,35 @@
+.create-new-flashcard-list-item {
+  display: flex;
+  justify-content: center;
+  /* background-color: #b41616; */
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  border-radius: 0;
+
+  border: 0px;
+}
+
+
+.create-new-flashcard-list-item-card {
+  display: flex;
+  margin: 0px 0px 40px 0px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  min-width: 300px;
+  justify-content: space-between;
+}
 
 
 
-.button-add{
-  
-  background-color: #10912a;
-    color: rgb(255, 255, 255);
-    margin: 15px 0px 15px 15px;
-    padding: 10px 30px 10px 30px;
-    border-radius: 60px;
-    border: none;
+.button-add {
+  background-color: light-dark( #000000, #d5cdcd);
+   
+  color:light-dark( rgb(255, 255, 255), #000000 );
+  margin: 15px 0px 15px 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 60px;
+  border: none;
 }
 
 
@@ -17,15 +38,14 @@
 }
 
 
-
-.button-edit{
+.button-edit {
 
   background-color: #0d487e;
-    color: rgb(255, 255, 255);
-    margin: 15px 0px 15px 15px;
-    padding: 10px 30px 10px 30px;
-    border-radius: 60px;
-    border: none;
+  color: rgb(255, 255, 255);
+  margin: 15px 0px 15px 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 60px;
+  border: none;
 }
 
 
@@ -34,14 +54,13 @@
 }
 
 
-
-.button-remove{
-   background-color: #b41616;
-    color: rgb(255, 255, 255);
-    margin: 15px 0px 15px 15px;
-    padding: 10px 30px 10px 30px;
-    border-radius: 60px;
-    border: none;
+.button-remove {
+  background-color: #b41616;
+  color: rgb(255, 255, 255);
+  margin: 15px 0px 15px 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 60px;
+  border: none;
 }
 
 
@@ -49,16 +68,147 @@
   opacity: 75%;
 }
 
-.button-create{
+.button-create {
 
   background-color: #000000;
-    color: rgb(255, 255, 255);
-    margin: 15px 0px 15px 15px;
-    padding: 10px 30px 10px 30px;
-    border-radius: 60px;
-    border: none;
+  color: rgb(255, 255, 255);
+  margin: 15px 0px 15px 15px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 60px;
+  border: none;
 }
 
 .button-create:hover {
   opacity: 75%;
+}
+
+#create-new-form-text-area-input {
+  width: 400px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  /* Textarea Specific Fixes */
+  font-family: inherit;
+  /* Inherits the page font instead of default monospace */
+  font-size: inherit;
+  resize: vertical;
+  /* Allows user to resize height, but prevents breaking width */
+  min-height: auto;
+}
+
+.create-new-form-text-area {
+  width: 400px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  /* Textarea Specific Fixes */
+  font-family: inherit;
+  /* Inherits the page font instead of default monospace */
+  font-size: inherit;
+  resize: vertical;
+  /* Allows user to resize height, but prevents breaking width */
+  min-height: 100px;
+}
+
+
+#create-flashcard-container {
+  display: flex;
+
+  margin: 40px 20px 20px 20px;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+  /* overscroll-behavior: none; */
+}
+
+
+#create-flashcard-input-container {
+  display: flex;
+
+  flex-direction: column;
+  /* align-content: flex-start; */
+  justify-content: flex-start;
+  margin: 0px 10px 0px 10px;
+  padding: 0;
+}
+
+.create-flashcard-elem {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.create-flashcard-elem>label {
+  text-align: center;
+}
+
+.create-flashcard-elem>input {
+  align-self: center;
+
+}
+
+.create-flashcard-elem>textarea {
+  align-self: center;
+}
+
+#create-flashcard-item-list-container {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 0px;
+
+}
+
+
+
+#create-flashcard-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 12px 12px 12px;
+  border-radius: 10px;
+  background-color: light-dark( #d5d8df, #464444);
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
+}
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+  #create-new-form-text-area-input {
+    width: 340px;
+  }
+
+
+  .create-new-form-text-area {
+    width: 340px;
+  }
+
+
+
+  #create-flashcard-container {
+    flex-direction: column;
+
+  }
+
+
+  #create-flashcard-item-list {
+    width: auto;
+    height: auto;
+  }
 }

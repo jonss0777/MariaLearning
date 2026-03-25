@@ -1,5 +1,8 @@
 import { Navigate, Outlet, useLocation, Link } from 'react-router-dom';
 import { useAuth } from './Providers/AuthProvider';
+import youtubeIcon from '../src/assets/youtube.png';
+import instagramIcon from '../src/assets/instagram.png';
+import linkedinIcon from '../src/assets/linkedin.png';
 
 const ProtectedRoute = () => {
     const { user, loading } = useAuth();
@@ -16,30 +19,37 @@ const ProtectedRoute = () => {
         {user
             ?
             <>
-            (<div className="content">
-                <nav>
-                    <Link style={{ margin: "5px", padding: "8px" }} to="/collection">Collection</Link>
-                    <Link style={{ margin: "5px", padding: "8px" }} to="/shop">Shop</Link> |{" "}
+                (<div className="content">
+                    <nav>
+                        <Link style={{ margin: "0px", padding: "8px" }} to="/collection">Collection</Link> |{" "}
+                        <Link style={{ margin: "0px", padding: "8px" }} to="/shop">Shop</Link> |{" "}
 
-                    <Link style={{ margin: "5px", padding: "8px" }} to="/about">About</Link> |{" "}
-                    
-                    <Link style={{backgroundColor:"rgb(183, 80, 80)", position: "fixed", right: 0, top: 0, padding: "10px", color: "white"}} to="/login">Logout</Link>
-                
-                </nav>
-                <Outlet />
-                
-            </div>
-            <footer style={{ display: "flex", alignItems: "center", flexDirection: "column", position: "relative", bottom: 0, width: "100%", padding: "10px", margin: "0px" }}>
-                    <p>Contach Information</p>
-                    <p>johndoe@marialearning.com</p>
-                    <p>Socials</p>
-                    <div style={{ display: "flex", flexDirection: "row", rowGap: "30px" }}>
-                        <p style={{ padding: "0px", margin: "0px 0px 0px 0px" }}>icon</p>
-                        <p style={{ padding: "0px", margin: "0px 10px 0px 10px" }}>icon</p>
-                        <p style={{ padding: "0px", margin: "0px 10px 0px 10px" }}>icon</p>
+                        <Link style={{ margin: "0px", padding: "8px" }} to="/about">About</Link> |{" "}
+
+                        <Link style={{ margin: "0px", padding: "8px" }} to="/login">Logout</Link>
+
+                    </nav>
+                    <Outlet />
+
+                </div>
+                <footer>
+                    <p>Contact Information</p>
+                    <div style={{display:"flex", flexDirection:"row", columnGap: "30px"}}>
+                    <div style={{display:"flex", flexDirection:"column"}}>
+                        <p>Email: johndoe@marialearning.com</p>
                     </div>
+                    <div>
+                        <div style={{ display: "flex", flexDirection: "row", columnGap: "30px" }}>
+                            <img src={youtubeIcon} widht="50px" height="50px"></img>
+                            <img src={instagramIcon} widht="50px" height="50px"></img>
+                            <img src={linkedinIcon} widht="50x" height="50px"></img>
+                        </div>
+                    </div>
+                    </div>
+                    <p>Copyright &copy;  2026 Maria Learning</p>
                 </footer>
-            )
+
+                )
             </>
             : <Navigate to="/login" state={{ from: location }} replace />}
 

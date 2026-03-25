@@ -57,7 +57,7 @@ const Login = () => {
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", rowGap: "20px" }}>
             <button className="auth-button" type="submit">Login</button>
             {  true  ?
-              <Link style={{ textAlign: "center" }} to="/register">Or register</Link>
+              <Link style={{ textAlign: "center" }} to="/register">Register</Link>
               : <p>reset password...</p>
             }
           </div>

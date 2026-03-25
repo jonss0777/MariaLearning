@@ -78,7 +78,7 @@ const Register = () => {
                     </div>
                     <div style={{ display: "flex", flexDirection:"column", justifyContent: "center", rowGap: "20px" }}>
                         <button className="auth-button" type="submit">Register</button>
-                        <Link style={{textAlign:"center"}}to="/login">Or Login</Link>
+                        <Link style={{textAlign:"center"}}to="/login">Login</Link>
                     </div>
                     
 

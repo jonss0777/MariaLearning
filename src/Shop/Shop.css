@@ -1,12 +1,23 @@
+.shop-card {
+    display: flex;
+    margin: 10px 30px;
+    justify-content: space-evenly;
+    padding: 10px 25px 10px 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+
+
+}
+
 .shop-buy-button {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+     background-color: light-dark( #000000, #d5cdcd);
+   
+    color:light-dark( rgb(255, 255, 255), #000000 );
     margin: 15px 0px 15px 15px;
     padding: 10px 30px 10px 30px;
     border-radius: 60px;
     border: none;
-
-
 }
 
 .shop-buy-button:hover {
@@ -20,7 +31,7 @@
     position: relative;
     right: 10;
     top: 40;
-    color:black;
+    color: black;
     width: 120px;
     height: 25px;
     background-color: rgb(253, 227, 26);
@@ -42,14 +53,105 @@
     padding-right: 40px;
 }
 
+#x-shopping-cart-button {
+   position: relative;
+    color: rgb(0, 0, 0);
+    margin: 0px 7px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 0px;
+    border: none;
+}
+
+#x-shopping-cart-button{
+    opacity: 70%;
+    cursor: pointer;
+    
+}
+
+#subtract-button {
+
+     width: 40px;
+  height: 40px;
+  /* Apply border-radius to make it a circle */
+  border-radius: 50%; /* */
+  /* Center the text vertically */
+  line-height: 30px;
+  text-align: center;
+  /* Basic styling */
+  background-color: light-dark( #000000, #d5cdcd);
+   
+    color:light-dark( rgb(255, 255, 255), #000000 );
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0px 5px 0px 5px;
+
+}
+
+#add-button {
+  
+     width: 40px;
+  height: 40px;
+    /* Apply border-radius to make it a circle */
+    border-radius: 50%;
+    /* */
+    /* Center the text vertically */
+    line-height: 40px;
+    text-align: center;
+    /* Basic styling */
+    
+     background-color: light-dark( #000000, #d5cdcd);
+   
+    color:light-dark( rgb(255, 255, 255), #000000 );
+    
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+     margin: 0px 5px 0px 5px;
+
+}
+
+#order-button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    margin: 15px 15px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+    
+
+}
+
+#order-button:hover{
+    opacity: 70%;
+    cursor: pointer;
+
+}
+
+
+
+#clear-cart-button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    margin: 15px 15px 15px 15px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#clear-cart-button:hover{
+    opacity: 70%;
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 700px) {
-    #cart-box{
+    #cart-box {
         /* position: relative;
         padding-top: 0;
         padding-right: 0; */
 
     }
 }
-
-

@@ -44,10 +44,10 @@ export const CartProvider = ({ children }) => {
                 ]
             };
         });
-       
+
     };
 
-   
+
     const removeItemFromCart = (id) => {
         setShoppingCart((prev) => {
             const existingItems = prev[id] || [];
@@ -64,10 +64,23 @@ export const CartProvider = ({ children }) => {
         });
     };
 
-    const clearCart = () => setShoppingCart({});
+    const removeProduct = (id) => {
+        setShoppingCart((prev) => {
+            const existingItems = prev[id] || [];
+
+            if (existingItems.length === 0) return prev;
+            return {
+                ...prev,
+                [id]: []
+            }
+
+        })
+    }
+
+    //const clearCart = () => setShoppingCart({});
 
     return (
-        <CartContext value={{ shoppingCart, addItemToCart, removeItemFromCart, clearCart }}>
+        <CartContext value={{ shoppingCart, addItemToCart, removeItemFromCart,  removeProduct}}>
             {children}
         </CartContext>
     );

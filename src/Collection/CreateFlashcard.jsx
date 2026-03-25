@@ -60,93 +60,91 @@ export default function CreateFlashcard(props) {
     }
 
     return (
-        <div className="content">
+        <>
             <h1>New</h1>
-            <div id="input-container">
+            <div id="create-flashcard-container">
 
-                <form onSubmit={addFlashcard} >
-                    <div id="form-input">
-                        <div className="form-input-item">
+                <div id="create-flashcard-input-container">
+
+                    <form style={{ display: "flex", flexDirection: "column", margin: 0, padding: 0 }} onSubmit={addFlashcard} >
+
+                        <div className="create-flashcard-elem">
                             <label >Collection Name</label><br />
-                            <input type="text" id="collection_name" name="collection_name" placeholder="..." required />
+                            <input id="create-new-form-text-area-input" type="text" name="collection_name" placeholder="..." required />
 
                         </div>
 
-                        <div className="form-input-item">
+                        <div className="create-flashcard-elem">
                             <label >Word</label><br />
-                            {/* <input type="text" id="word" name="word" placeholder="..." required /> */}
-                            <textarea name="word" rows="4" cols="30" required placeholder="...">
-
+                            <textarea className="create-new-form-text-area" name="word" required placeholder="...">
                             </textarea>
-
                         </div>
 
-                        <div className="form-input-item">
+                        <div className="create-flashcard-elem">
                             <label >Definition</label><br />
-                            {/* <input type="text" id="definition" name="definition" placeholder="..." required /> */}
-                            <textarea name="definition" rows="4" cols="30" required placeholder="...">
+                            <textarea className="create-new-form-text-area" name="definition" required placeholder="...">
 
                             </textarea>
                         </div>
-                        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                        <div style={{display:"flex", justifyContent:"flex-end"}}>
                             <input className="button-add" type="submit" value="Add" />
                         </div>
 
+
+                    </form>
+                </div>
+
+                <div id="create-flashcard-item-list-container">
+
+                    {/* <h2 style={{ textAlign: "center" }}>Flashcards</h2> */}
+                    <ol id="create-flashcard-item-list">
+                        {flashcardData.map((item, index) => (
+                            // A unique "key" prop is required for each element in the list
+                            <li className="create-new-flashcard-list-item"key={index}>
+                                {!item.edit ?
+                                    <div className="create-new-flashcard-list-item-card card">
+
+                                        <div >
+                                            <h3>{item.word}</h3>
+                                            <p>{item.definition}</p>
+                                        </div>
+                                        <div style={{ display: "flex", flexDirection: "column", padding: "0px 0px 0px 20px" }}>
+                                            <button className="button-edit" onClick={() => editFlashcard(index)}>Edit</button>
+                                            <button className="button-remove" onClick={() => removeFlashcard(index)}>Remove</button>
+                                        </div>
+                                    </div>
+                                    :
+                                    <>
+                                        <div className="flash-card-edit">
+                                            <form onSubmit={(event) => saveFlashcardEdit(event, index)}>
+                                                <div style={{ display: "flex", rowGap: "10px" }}>
+                                                    <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Word</label>
+                                                    <textarea style={{ padding: "0", margin: "10px 0px" }} name="word" rows="2" cols="30" defaultValue={item.word} required ></textarea>
+                                                </div>
+                                                <div style={{ display: "flex", rowGap: "10px" }}>
+                                                    <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Title</label>
+                                                    <textarea style={{ padding: "0", margin: "10px 0px" }} name="definition" rows="2" cols="30" defaultValue={item.definition} required></textarea>
+                                                </div>
+
+                                                <div style={{ display: "flex", justifyContent: "center", columnGap: "10px" }}>
+                                                    <button className="button-remove" onClick={() => cancelFlashcardEdit(index)}>Cancel</button>
+                                                    <input className="button-add" type="submit" value="Save" />
+
+                                                    {/* <button className="button-add" onClick={() => saveFlashcardEdit(index)}>Done </button> */}
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </>
+                                }
+                            </li>
+                        ))}
+                    </ol>
+                    <div style={{display:"flex", justifyContent:"flex-end"}}>
+                        <button className="button-create" onClick={handleCreate}>Create</button>
                     </div>
-                </form>
-            </div>
-
-            <div id="flash-cards-container">
-
-                <h2 style={{ textAlign: "center" }}>Flashcards</h2>
-                <ol id="flash-card-list">
-                    {flashcardData.map((item, index) => (
-                        // A unique "key" prop is required for each element in the list
-                        <li className="card" style={{ minWidth: "320px", padding: "10px 30px 0px 30px" }} key={index}>
-                            {!item.edit ?
-                                <div className="flash-card" style={{ width: "100%" }}>
-
-                                    <div style={{ width: "100%" }}>
-                                        <h3 >Word: {item.word}</h3>
-                                        <p >Definition: {item.definition}</p>
-                                    </div>
-                                    <div style={{ display: "flex", flexDirection: "column", padding: "0px 0px 0px 20px" }}>
-                                        <button className="button-edit" onClick={() => editFlashcard(index)}>Edit</button>
-
-                                        <button className="button-remove" onClick={() => removeFlashcard(index)}>Remove</button>
-                                    </div>
-                                </div>
-                                :
-                                <>
-                                    <div className="flash-card-edit">
-                                        <form onSubmit={(event) => saveFlashcardEdit(event, index)}>
-                                            <div style={{ display: "flex", rowGap: "10px" }}>
-                                                <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Word</label>
-                                                <textarea style={{ padding: "0", margin: "10px 0px" }} name="word" rows="2" cols="30" defaultValue={item.word} required ></textarea>
-                                            </div>
-                                            <div style={{ display: "flex", rowGap: "10px" }}>
-                                                <label style={{ padding: "0px 10px 0px 10px", margin: "0px 0px", alignContent: "center" }}>Title</label>
-                                                <textarea style={{ padding: "0", margin: "10px 0px" }} name="definition" rows="2" cols="30" defaultValue={item.definition} required></textarea>
-                                            </div>
-
-                                            <div style={{ display: "flex", justifyContent: "center", columnGap: "10px" }}>
-                                                <button className="button-remove" onClick={() => cancelFlashcardEdit(index)}>Cancel</button>
-                                                <input className="button-add" type="submit" value="Save" />
-
-                                                {/* <button className="button-add" onClick={() => saveFlashcardEdit(index)}>Done </button> */}
-                                            </div>
-                                        </form>
-                                    </div>
-                                </>
-                            }
-                        </li>
-                    ))}
-                </ol>
-                <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: "20px", margin: "0px 0px 80px 0px" }}>
-                    <button className="button-create" onClick={handleCreate}>Create</button>
                 </div>
             </div>
-        </div >
+        </>
 
     )
 

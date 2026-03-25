@@ -54,11 +54,11 @@ function Shop() {
                     <div style={{ padding: "0px 0px", margin: "0px 10px" }}>
                         <Link style={{ padding: "0px 0px", margin: "0px", color: "blue" }} to="/cart" >Open</Link>
                     </div>
-                    <div style={{ padding: "0px", margin: "0px 0px " }}>
+                    <div style={{ padding: "0px", margin: "0px 0px 0px 0px" }}>
                         <img style={{ padding: 0, margin: 0, overflow: "hidde", width: "20px", height: "20px" }} src={buyIcon} alt="Your SVG" />
                     </div>
-                    <div style={{ padding: "0px", margin: "0px", color: "black" }}>
-                        <p>{
+                    <div style={{ padding: "0px", margin: "0px 0px 0px 8px", color: "black",  }}>
+                        <p >{
                             //console.log(Object.values(shoppingCart))
                             Object.values(shoppingCart).reduce((acc, item) => {
                                 return acc + item.length;
@@ -71,7 +71,7 @@ function Shop() {
 
             <ol style={{ display: "flex", flexFlow: "wrap", listStyle: "none", listStyle: "none", margin: "0px", padding: "0px", justifyContent: "center" }}>
                 {inventory.map((item) => (
-                    <li key={item.id} className="card">
+                    <li key={item.id} className="shop-card card">
                         <div style={{ padding: "4px 4px 4px 4px", margin: "4px 4px 4px 4px" }}>
                             <h2 style={{ textAlign: "center" }}>{item.title}</h2>
                             <div>

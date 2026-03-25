@@ -1,23 +1,29 @@
 #create-new-flashcard-button {
-    background-color: #0d5189;
-    color: rgb(255, 255, 255);
+    background-color: light-dark( #0d5189, #ffffff);
+   
+    /* color:light-dark( rgb(255, 255, 255), #000000 ); */
+   
     margin: 15px;
     padding: 10px 30px 10px 30px;
     border-radius: 60px;
 }
 
+#create-new-flashcard-button>a{
+    color:light-dark( rgb(255, 255, 255), #000000 );
+}
+
+
 #create-new-flashcard-button:hover {
     opacity: 70%;
 }
 
-#create-new-flashcard-button>a {
-    color: white;
-}
+
 
 
 .collection-go-to-button {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+    background-color: light-dark( #000000, #d5cdcd);
+   
+    color:light-dark( rgb(255, 255, 255), #000000 );
     margin: 15px 0px 15px 15px;
     padding: 10px 30px 10px 30px;
     border-radius: 60px;
@@ -28,5 +34,16 @@
 
 .collection-go-to-button:hover {
     opacity: 70%;
-    color:white;
+ 
+}
+
+.collection-card {
+    display: flex;
+    margin: 10px 30px;
+    justify-content: space-evenly;
+    padding: 10px 25px 10px 25px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+
 }

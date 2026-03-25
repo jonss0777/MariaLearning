@@ -66,7 +66,7 @@ const Flashcard = () => {
     return (
         <>
            
-                <h1>{item.title}</h1>
+                <h1 style={{marginTop:"30px", marginBottom:"0px"}}>{item.title}</h1>
             
                 <div className="carousel">
                     <div className="carousel__track-container" >
